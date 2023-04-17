@@ -14,7 +14,7 @@
  const ty = eco.connect(mongodb);
 cmd(
   {
-    pattern: "delxo",
+    pattern: "مغادره",
     desc: "deletes TicTacToe running session.",
     filename: __filename,
     category: "game",
@@ -34,16 +34,16 @@ cmd(
         )
       ) {
         delete this.game
-        return citel.reply(`*Successfully Deleted running Xo game* ✅_`);
+        return citel.reply(`*تم مغادره الغرفه بنجاح* ✅_`);
         } else {
-              return citel.reply(`*No Xo game is running* ❗`)
+              return citel.reply(`*انت لست في اي غرفه* ❗`)
                     
         }
   })
   
 cmd(
   {
-    pattern: "xo",
+    pattern: "اكس",
     desc: "Play TicTacToe",
     filename: __filename,
     category: "game",
@@ -61,7 +61,7 @@ cmd(
             [room.game.playerX, room.game.playerO].includes(citel.sender)
         )
       )
-        return citel.reply("*A game is already going on* ❗");
+        return citel.reply("*اللعبة جارية بالفعل* ❗");
       let room = Object.values(this.game).find(
         (room) =>
           room.state === "WAITING" && (text ? room.name === text : true)
@@ -86,8 +86,8 @@ cmd(
           }[v];
         });
         let str = `
-*දැන් තරග වදින්නේ:* 🙋‍♂️ @${room.game.currentTurn.split("@")[0]}
-*තරගකරුගේ ID අංකය:* 🆔 ${room.id}
+*اللاعبين:* 🙋‍♂️ @${room.game.currentTurn.split("@")[0]}
+*من المنافس ID الرقم:* 🆔 ${room.id}
 ${arr.slice(0, 3).join("  ")}
 ${arr.slice(3, 6).join("  ")}
 ${arr.slice(6).join("  ")}
@@ -106,7 +106,7 @@ ${arr.slice(6).join("  ")}
           state: "WAITING",
         };
         if (text) room.name = text;
-        citel.reply("*ක්‍රීඩා කිරීමට තවත් කෙනෙකු අවශ්‍ය වේ! සම්බන්ද වීමට .xo ලෙස ටයිප් කරන්න* ❗ ");
+        citel.reply("*بحاجة الى شخص اخر للعب! اكتب .اكس للاتصال* ❗ ");
         this.game[room.id] = room;
       }
     }
@@ -136,7 +136,7 @@ cmd(
       let isWin = !1;
       let isTie = !1;
       let isSurrender = !1;
-      if (!/^([1-9]|(me)?give_up|surr?ender|off|skip)$/i.test(citel.text)) return;
+      if (!/^([1-9]|(me)?give_up|surr?ender|off|تخطي)$/i.test(citel.text)) return;
       isSurrender = !/^[1-9]$/.test(citel.text);
       if (citel.sender !== room.game.currentTurn) {
         if (!isSurrender) return !0;
@@ -151,10 +151,10 @@ cmd(
       ) {
         citel.reply(
           {
-            "-3": "*The game is over.*❗",
-            "-2": "*Invalid*❗",
-            "-1": "*Invalid Position*❗",
-            0: "*Invalid Position*❗",
+            "-3": "*انتهت اللعبة.*❗",
+            "-2": "*غير صالح*❗",
+            "-1": "*موقف غير صحيح*❗",
+            0: "*موقف غير صحيح*❗",
           }[ok]
         );
         return !0;
@@ -181,16 +181,16 @@ cmd(
         isWin = true;
       }
       let winner = isSurrender ? room.game.currentTurn : room.game.winner;
-      let str = `Room ID: ${room.id}
+      let str = `رقم الغرفه: ${room.id}
       
 ${arr.slice(0, 3).join("  ")}
 ${arr.slice(3, 6).join("  ")}
 ${arr.slice(6).join("  ")}
 ${
   isWin
-    ? `@${winner.split("@")[0]} ඔබ තරගයෙන් ජයග්‍රහණය කර ඇත. 🙋‍♂️`
+    ? `@${winner.split("@")[0]} لقد فزت بالمباراة. 🙋‍♂️`
     : isTie
-    ? `ජය පරාජය තොරවකින් ඔබලා දෙදෙනාම සම ජයග්‍රහණ ලබාගෙන ඇත. 👬`
+    ? `تعادل. 👬`
     : `*Current Turn* ${["❌", "⭕"][1 * room.game._currentTurn]} @${
         room.game.currentTurn.split("@")[0]
       }`
@@ -208,8 +208,8 @@ ${
           text: str,
           buttons: [
             {
-              buttonId: `${prefix}xo`,
-              buttonText: { displayText: "නැවත ක්‍රීඩාව කරන්න." },
+              buttonId: `${prefix}اكس`,
+              buttonText: { displayText: "العب مره اخرب." },
             },
           ],
           mentions: [room.game.playerO,room.game.playerX],
@@ -237,15 +237,15 @@ cmd({ pattern: "ship" , category: "fun" }, async(Void, citel, text) => {
     async function couple(percent) {
          var text;
         if (percent < 25) {
-            text = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\t\tThere's still time to reconsider your choices`
+            text = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\t\tلا يزال هناك متسع من الوقت لإعادة النظر في اختياراتك`
         } else if (percent < 50) {
-            text = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\t\t Good enough, I guess! 💫`
+            text = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\t\t جيد بما فيه الكفاية ، على ما أعتقد! 💫`
         } else if (percent < 75) {
-            text = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\t\t\tStay together and you'll find a way ⭐️`
+            text = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\t\t\tابقوا معًا وستجد طريقة ⭐️`
         } else if (percent < 90) {
-            text = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\tAmazing! You two will be a good couple 💖 `
+            text = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\tمدهش! أنتما الاثنان ستكونان زوجان جيدان 💖 `
         } else {
-            text = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\tYou two are fated to be together 💙`
+            text = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\tأنتما مصيرهما أن تكونا معًا 💙`
         }
         return text
         }
