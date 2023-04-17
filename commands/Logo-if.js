@@ -28,157 +28,157 @@ const maker = require('mumaker')
 
     //---------------------------------------------------------------------------
 
-cmd({ pattern: "deepsea", alias: ["logo1"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
+cmd({ pattern: "deepsea", alias: ["لوجو1"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
 
         if (!text) return citel.reply('_Need text._')
 
         let anu = await maker.textpro('https://textpro.me/create-3d-deep-sea-metal-text-effect-online-1053.html', text)
 
-        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
+        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
 
     })
 
     //---------------------------------------------------------------------------
 
-cmd({ pattern: "horror", alias: ["logo2"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
+cmd({ pattern: "horror", alias: ["لوجو2"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
 
         if (!text) return citel.reply('_Need text._')
 
         let anu = await maker.textpro('https://textpro.me/horror-blood-text-effect-online-883.html', text)
 
-        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
+        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
 
     })
 
     //---------------------------------------------------------------------------
 
-cmd({ pattern: "whitebear", alias: ["logo3"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
+cmd({ pattern: "whitebear", alias: ["لوجو3"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
 
         if (!text) return citel.reply('_Need text._')
 
         let anu = await maker.textpro('https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html', text)
 
-        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
+        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
 
     })
 
     //---------------------------------------------------------------------------
 
-cmd({ pattern: "joker", alias: ["logo4"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
+cmd({ pattern: "joker", alias: ["لوجو4"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
 
         if (!text) return citel.reply('_Need text._')
 
         let anu = await maker.textpro('https://textpro.me/create-logo-joker-online-934.html', text)
 
-        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
+        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
 
     })
 
     //---------------------------------------------------------------------------
 
-cmd({ pattern: "metallic", alias: ["logo5"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
+cmd({ pattern: "metallic", alias: ["لوجو5"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
 
         if (!text) return citel.reply('_Need text._')
 
         let anu = await maker.textpro('https://textpro.me/create-a-metallic-text-effect-free-online-1041.html', text)
 
-        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
+        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
 
     })
 
     //---------------------------------------------------------------------------
 
-cmd({ pattern: "steel", alias: ["logo6"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
+cmd({ pattern: "steel", alias: ["لوجو6"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
 
         if (!text) return citel.reply('_Need text._')
 
         let anu = await maker.textpro('https://textpro.me/steel-text-effect-online-921.html', text)
 
-        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
+        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
 
     })
 
     //---------------------------------------------------------------------------
 
-cmd({ pattern: "harrypotter", alias: ["logo7"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
+cmd({ pattern: "harrypotter", alias: ["لوجو7"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
 
         if (!text) return citel.reply('_Need text._')
 
         let anu = await maker.textpro('https://textpro.me/create-harry-potter-text-effect-online-1025.html', text)
 
-        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
+        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
 
     })
 
     //---------------------------------------------------------------------------
 
-cmd({ pattern: "underwater", alias: ["logo8"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
+cmd({ pattern: "underwater", alias: ["لوجو8"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
 
         if (!text) return citel.reply('_Need text._')
 
         let anu = await maker.textpro('https://textpro.me/3d-underwater-text-effect-generator-online-1013.html', text)
 
-        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
+        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
 
     })
 
     //---------------------------------------------------------------------------
 
-cmd({ pattern: "luxury", alias: ["logo9"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
+cmd({ pattern: "luxury", alias: ["لوجو9"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
 
         if (!text) return citel.reply('_Need text._')
 
         let anu = await maker.textpro('https://textpro.me/3d-luxury-gold-text-effect-online-1003.html', text)
 
-        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
+        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
 
     })
 
     //---------------------------------------------------------------------------
 
-cmd({ pattern: "glue", alias: ["logo10"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
+cmd({ pattern: "glue", alias: ["لوجو10"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
 
         if (!text) return citel.reply('_Need text._')
 
         let anu = await maker.textpro('https://textpro.me/create-3d-glue-text-effect-with-realistic-style-986.html', text)
 
-        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
+        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
 
     })
 
     //---------------------------------------------------------------------------
 
-cmd({ pattern: "fabric", alias: ["logo11"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
+cmd({ pattern: "fabric", alias: ["لوجو11"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
 
         if (!text) return citel.reply('_Need text._')
 
         let anu = await maker.textpro('https://textpro.me/fabric-text-effect-online-964.html', text)
 
-        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
+        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
 
     })
 
     //---------------------------------------------------------------------------
 
-cmd({ pattern: "toxic", alias: ["logo12"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
+cmd({ pattern: "toxic", alias: ["لوجو12"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
 
         if (!text) return citel.reply('_Need text._')
 
         let anu = await maker.textpro('https://textpro.me/toxic-text-effect-online-901.html', text)
 
-        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
+        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
 
     })
 
     //---------------------------------------------------------------------------
 
-cmd({ pattern: "ancient", alias: ["logo13"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
+cmd({ pattern: "ancient", alias: ["لوجو13"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
 
         if (!text) return citel.reply('_Need text._')
 
         let anu = await maker.textpro('https://textpro.me/3d-golden-ancient-text-effect-online-free-1060.html', text)
 
-        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
+        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
 
     })
 
@@ -188,7 +188,7 @@ cmd({
 
             pattern: "cloud",
 
-            alias: ["logo14"],
+            alias: ["لوجو14"],
 
             category: "textpro",
 
@@ -210,7 +210,7 @@ cmd({
 
                 },
 
-                caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
+                caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
 
             }, {
 
@@ -228,7 +228,7 @@ cmd({
 
             pattern: "transformer",
 
-            alias: ["logo15"],
+            alias: ["لوجو15"],
 
             category: "textpro",
 
@@ -250,7 +250,7 @@ cmd({
 
                 },
 
-                caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
+                caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
 
             }, {
 
@@ -268,7 +268,7 @@ cmd({
 
             pattern: "thunder",
 
-            alias: ["logo16"],
+            alias: ["لوجو16"],
 
             category: "textpro",
 
@@ -290,7 +290,7 @@ cmd({
 
                 },
 
-                caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
+                caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
 
             }, {
 
@@ -308,7 +308,7 @@ cmd({
 
             pattern: "scifi",
 
-            alias: ["logo17"],
+            alias: ["لوجو17"],
 
             category: "textpro",
 
@@ -330,7 +330,7 @@ cmd({
 
                 },
 
-                caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
+                caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
 
             }, {
 
@@ -348,7 +348,7 @@ cmd({
 
             pattern: "sand",
 
-            alias: ["logo18"],
+            alias: ["لوجو18"],
 
             category: "textpro",
 
@@ -370,7 +370,7 @@ cmd({
 
                 },
 
-                caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
+                caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
 
             }, {
 
@@ -388,7 +388,7 @@ cmd({
 
             pattern: "rainbow",
 
-            alias: ["logo19"],
+            alias: ["لوجو19"],
 
             category: "textpro",
 
@@ -410,7 +410,7 @@ cmd({
 
                 },
 
-                caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
+                caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
 
             }, {
 
@@ -428,7 +428,7 @@ cmd({
 
             pattern: "pencil",
 
-            alias: ["logo20"],
+            alias: ["لوجو20"],
 
             category: "textpro",
 
@@ -450,7 +450,7 @@ cmd({
 
                 },
 
-                caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
+                caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
 
             }, {
 
@@ -468,7 +468,7 @@ cmd({
 
             pattern: "neon",
 
-            alias: ["logo21"],
+            alias: ["لوجو21"],
 
             category: "textpro",
 
@@ -490,7 +490,7 @@ cmd({
 
                 },
 
-                caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
+                caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
 
             }, {
 
@@ -508,7 +508,7 @@ cmd({
 
             pattern: "magma",
 
-            alias: ["logo22"],
+            alias: ["لوجو22"],
 
             category: "textpro",
 
@@ -530,7 +530,7 @@ cmd({
 
                 },
 
-                caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
+                caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
 
             }, {
 
@@ -548,7 +548,7 @@ cmd({
 
             pattern: "leaves",
 
-            alias: ["logo23"],
+            alias: ["لوجو23"],
 
             category: "textpro",
 
@@ -570,7 +570,7 @@ cmd({
 
                 },
 
-                caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
+                caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
 
             }, {
 
@@ -588,7 +588,7 @@ cmd({
 
             pattern: "glitch",
 
-            alias: ["logo24"],
+            alias: ["لوجو24"],
 
             category: "textpro",
 
@@ -610,7 +610,7 @@ cmd({
 
                 },
 
-                caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
+                caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
 
             }, {
 
@@ -628,7 +628,7 @@ cmd({
 
             pattern: "discovery",
 
-            alias: ["logo25"],
+            alias: ["لوجو25"],
 
             category: "textpro",
 
@@ -650,7 +650,7 @@ cmd({
 
                 },
 
-                caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
+                caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
 
             }, {
 
@@ -668,7 +668,7 @@ cmd({
 
             pattern: "christmas",
 
-            alias: ["logo26"],
+            alias: ["لوجو26"],
 
             category: "textpro",
 
@@ -690,7 +690,7 @@ cmd({
 
                 },
 
-                caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
+                caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
 
             }, {
 
@@ -708,7 +708,7 @@ cmd({
 
             pattern: "candy",
 
-            alias: ["logo27"],
+            alias: ["لوجو27"],
 
             category: "textpro",
 
@@ -730,7 +730,7 @@ cmd({
 
                 },
 
-                caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
+                caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
 
             }, {
 
@@ -748,7 +748,7 @@ cmd({
 
             pattern: "1917",
 
-            alias: ["logo28"],
+            alias: ["لوجو28"],
 
             category: "textpro",
 
@@ -770,7 +770,7 @@ cmd({
 
                 },
 
-                caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
+                caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
 
             }, {
 
@@ -788,7 +788,7 @@ cmd({
 
             pattern: "newtext",
 
-            alias: ["logo30"],
+            alias: ["لوجو30"],
 
             category: "textpro",
 
@@ -810,7 +810,7 @@ cmd({
 
                 },
 
-                caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
+                caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
 
             }, {
 
@@ -828,7 +828,7 @@ cmd({
 
         pattern: "blackpink",
 
-        alias: ["logo29"],
+        alias: ["لوجو29"],
 
         category: "textpro",
 
@@ -850,7 +850,7 @@ cmd({
 
             },
 
-            caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
+            caption: `⦿.*صنع بواسطه :-* ${tlang().title} 👨‍💻 ${tlang().greet}`
 
         }, {
 
