@@ -12,7 +12,7 @@
 //---------------------------------------------------------------------------
 const {cmd,tlang} = require('../lib')
 cmd({
-        pattern: "restart",
+        pattern: "رستر",
         desc: "To restart bot",
         category: "tools",
         react: "🔄",
@@ -21,7 +21,7 @@ cmd({
     async(Void, citel,text,{ isCreator }) => {
    if (!isCreator) return citel.reply(tlang().owner)
             const { exec } = require("child_process")
-            citel.reply('Restarting')
+            citel.reply('جاري اعاده التشغيل...')
             exec('pm2 restart all')
     }
 );
