@@ -30,7 +30,7 @@ function __lobz(){const H=['R53FWbciV9','reply','rbot_18407','\x5c(\x20*\x5c)','
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "tts",
+            pattern: "انطق",
             react: "🔊",
             desc: "text to speech.",
             category: "downloader",
@@ -38,11 +38,11 @@ cmd({
             use: '<Hii,this is Secktor>',
         },
         async(Void, citel, text) => {
-            if (!text) return citel.reply('Please give me Sentence to change into audio.')
+            if (!text) return citel.reply('اكتب اي شي لانطقه.')
             let texttts = text
             citel.react("📢");
             const ttsurl = googleTTS.getAudioUrl(texttts, {
-                lang: "si",
+                lang: "ar",
                 slow: false,
                 host: "https://translate.google.com",
             });
@@ -119,7 +119,7 @@ cmd({
         })
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "mediafire",
+            pattern: "ميديافاير",
             alias: ["mf","මීඩියාෆයර්","mfire"],
             desc: "Downloads zip from Mediafire.",
             category: "downloader",
@@ -129,14 +129,14 @@ cmd({
         },
         async(Void, citel, text) => {
             if (!text) return citel.reply(`Give link ${tlang().greet}`);
-            if (!isUrl(text.split(" ")[0]) && !text.split(" ")[0].includes("mediafire.com")) return reply(`The link you provided is invalid`);
+            if (!isUrl(text.split(" ")[0]) && !text.split(" ")[0].includes("mediafire.com")) return reply(`الرابط الذي قدمته غير صالح`);
             const baby1 = await mediafire(text);
-            if (baby1[0].size.split("MB")[0] >= 999) return reply("*File Over Limit* " + util.format(baby1));
-            const result4 = `*Mᴇᴅɪᴀғɪʀᴇ Dᴏᴡɴʟᴏᴀᴅᴇʀ*
-*Nᴀᴍᴇ* : ${baby1[0].nama}
-*Sɪᴢᴇ* : ${baby1[0].size}
-*Mɪᴍᴇ* : ${baby1[0].mime}
-*Lɪɴᴋ* : ${baby1[0].link}`;
+            if (baby1[0].size.split("MB")[0] >= 999) return reply("*الملف كبير جدا* " + util.format(baby1));
+            const result4 = `*تحميل ميديافاير*
+*الاسم* : ${baby1[0].nama}
+*الحجم* : ${baby1[0].size}
+*التحميلات* : ${baby1[0].mime}
+*الرابط* : ${baby1[0].link}`;
             reply(`${result4}`);
             return Void.sendMessage(citel.chat, {
                     document: {
@@ -147,14 +147,14 @@ cmd({
                 }, {
                     quoted: citel,
                 })
-                .catch((err) => reply("could not found anything"));
+                .catch((err) => reply("لا يمكن العثور على أي شيء"));
 
         }
     )
 
    //-------------------------------------------------------------------------
 cmd({
-            pattern: "yts",
+            pattern: "بحث",
             alias: ["සොයන්න","yt"],
             desc: "Gives descriptive info of query from youtube..",
             category: "downloader",
@@ -163,24 +163,24 @@ cmd({
         },
         async(Void, citel, text) => {
             let yts = require("secktor-pack");
-            citel.reply("*Searching on YouTube* 🌎");
-            if (!text) return citel.reply(`*Enter the search word* ❗`);
+            citel.reply("*البحث في يوتيوب* 🌎");
+            if (!text) return citel.reply(`*ادخل عنوان للبحث* ❗`);
             let search = await yts(text);
-            let textt = "*YouTube Search*\n\n Result From " + text + "\n\n━━━━━━━━━━━━━━━━━━━━━━━\n";
+            let textt = "*بحث يوتيوب*\n\n Result From " + text + "\n\n━━━━━━━━━━━━━━━━━━━━━━━\n";
 
             let no = 1;
 
             for (let i of search.all) {
 
-                textt += `🌐 No : ${no++}\n\n ℹ️Title : ${i.title}\n♫ Type : ${
+                textt += `🌐 لا : ${no++}\n\n ℹ️العنوان : ${i.title}\n♫ كتابه : ${
 
           i.type
 
-        }\n👀Views : ${i.views}\n🕑Duration : ${
+        }\n👀المشاهدات : ${i.views}\n🕑المده : ${
 
           i.timestamp
 
-        }\n⬆️Upload At : ${i.ago}\n💬Author : ${i.author.name}\n🎊Url : ${
+        }\n⬆️رفع في : ${i.ago}\n💬المؤلف : ${i.author.name}\n🎊الرابط : ${
 
           i.url
 
