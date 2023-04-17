@@ -34,9 +34,9 @@ cmd(
         )
       ) {
         delete this.game
-        return citel.reply(`*تم مغادره الغرفه بنجاح* ✅_`);
+        return citel.reply(`تم حذف الجولة`);
         } else {
-              return citel.reply(`*انت لست في اي غرفه* ❗`)
+              return citel.reply(`ما في جولة اصلا`)
                     
         }
   })
@@ -136,7 +136,7 @@ cmd(
       let isWin = !1;
       let isTie = !1;
       let isSurrender = !1;
-      if (!/^([1-9]|(me)?give_up|surr?ender|off|تخطي)$/i.test(citel.text)) return;
+      if (!/^([1-9]|(me)?give_up|surr?ender|استسلم|استسلام)$/i.test(citel.text)) return;
       isSurrender = !/^[1-9]$/.test(citel.text);
       if (citel.sender !== room.game.currentTurn) {
         if (!isSurrender) return !0;
@@ -188,10 +188,10 @@ ${arr.slice(3, 6).join("  ")}
 ${arr.slice(6).join("  ")}
 ${
   isWin
-    ? `@${winner.split("@")[0]} لقد فزت بالمباراة. 🙋‍♂️`
+    ? `@${winner.split("@")[0]} فاز/ت 🎖️`
     : isTie
-    ? `تعادل. 👬`
-    : `*Current Turn* ${["❌", "⭕"][1 * room.game._currentTurn]} @${
+    ? `تعادل ، كفو لثنين 👏`
+    : `*دورك* ${["❌", "⭕"][1 * room.game._currentTurn]} @${
         room.game.currentTurn.split("@")[0]
       }`
 }
@@ -227,7 +227,7 @@ ${
   }
 );
 
-cmd({ pattern: "ship" , category: "fun" }, async(Void, citel, text) => {
+cmd({ pattern: "شبيهي" , category: "fun" }, async(Void, citel, text) => {
     const { tlang } = require('../lib')
    if (!citel.isGroup) return citel.reply(tlang().group);
    const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
@@ -237,15 +237,15 @@ cmd({ pattern: "ship" , category: "fun" }, async(Void, citel, text) => {
     async function couple(percent) {
          var text;
         if (percent < 25) {
-            text = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\t\tلا يزال هناك متسع من الوقت لإعادة النظر في اختياراتك`
+            text = `\t\t\t\t\t*نسبه التشابه : ${percentage}%* \n\t\tابعد عنه ما يشبهك 🦦.`
         } else if (percent < 50) {
-            text = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\t\t جيد بما فيه الكفاية ، على ما أعتقد! 💫`
+            text = `\t\t\t\t\t*نسيه التشابه : ${percentage}%* \n\t\t امم شرايكم تصيرو اصدقاء 🦦؟`
         } else if (percent < 75) {
-            text = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\t\t\tابقوا معًا وستجد طريقة ⭐️`
+            text = `\t\t\t\t\t*نسبه التشابه : ${percentage}%* \n\t\t\tولل يزينكم 🦦.`
         } else if (percent < 90) {
-            text = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\tمدهش! أنتما الاثنان ستكونان زوجان جيدان 💖 `
+            text = `\t\t\t\t\t*نسبه التشابه : ${percentage}%* \n\tاممم ثنائي حلو 🦦. `
         } else {
-            text = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\tأنتما مصيرهما أن تكونا معًا 💙`
+            text = `\t\t\t\t\t*نسبه التشابه : ${percentage}%* \n\tالله ، خُلقتم لبعض 😔💙.`
         }
         return text
         }
@@ -256,12 +256,12 @@ cmd({ pattern: "ship" , category: "fun" }, async(Void, citel, text) => {
        } else {
        shiper = members[Math.floor(Math.random() * members.length)]
        }
-       let caption = `\t❣️ *Matchmaking...* ❣️ \n`
+       let caption = `\t❣️ *التوفيق بين...* ❣️ \n`
         caption += `\t\t✯────────────────────✯\n`
         caption += `@${citel.sender.split('@')[0]}  x  @${shiper.split('@')[0]}\n`
         caption += `\t\t✯────────────────────✯\n`
         caption += await couple(percentage)
-        if(citel.sender.split('@')[0]===shiper.split('@')[0]) return citel.reply('```'+'Wait... What!!!,You wanna do matchmaking with yourself'+'```')
+        if(citel.sender.split('@')[0]===shiper.split('@')[0]) return citel.reply('```'+'تستغبي يفنطل ؟'+'```')
         await Void.sendMessage(citel.chat,{text: caption,mentions: [citel.sender,shiper]},{quoted:citel})
    }
 )
