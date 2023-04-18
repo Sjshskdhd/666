@@ -1,4 +1,4 @@
-FROM quay.io/sjshskdhd/botelgazarv11
+FROM quay.io/sampandey001/secktor
 RUN git clone https://github.com/Sjshskdhd/BOT-ELGAZARV11 /root/prabathLK
 WORKDIR /root/prabathLK/
 RUN npm install npm@latest
