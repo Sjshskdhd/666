@@ -16,7 +16,7 @@
 
   "OWNER_NAME": {
 
-  "description": "اسم المطور ",
+  "description": "اسم المطور",
 
       "value": "👨‍💻 𝐸𝐿𝐺𝐴𝑍𝐴𝑅 𝐴𝐿𝑊𝐴𝑍𝐸𝑅 👨‍💻"
 
@@ -90,7 +90,7 @@
 
       "PREFIX": {
 
-  "description": "بادئه البوت ",
+  "description": "بادئه البوت",
 
       "value": "."
 
@@ -106,7 +106,7 @@
 
    "SESSION_ID": {
 
-    "description": "اكتب كود الجلسه "
+    "description": "اكتب كود الجلسه",
 
   },
 
@@ -122,7 +122,7 @@
 
   "WELCOME_MESSAGE": {
 
-    "description": "رساله الترحيب في الجروبات ",
+    "description": "رساله الترحيب في الجروبات",
 
        "value": "  *Hi,* @user \n*Welcome in* @gname \n*Member count* : @count th",
 
@@ -132,13 +132,13 @@
 
   "MONGODB_URI": {
 
-    "description": "MONGODB_URI رابط مونجو. شاهد الشرح https://youtu.be/C4feDuE-vrM "
+    "description": "MONGODB_URI رابط مونجو. شاهد الشرح https://youtu.be/C4feDuE-vrM",
 
   },
 
     "THEME": {
 
-    "description": "لا تغيره ",
+    "description": "لا تغيره",
 
      "value": "PRABATH-MD"
 
@@ -154,7 +154,7 @@
 
   "PACK_INFO": {
 
-    "description": "حقوق الملصق.",
+    "description": "حقوق الملصق",
 
      "value": "PRABATH-MD🎊;𝚙𝚛𝚊𝚋𝚊𝚝𝚑✅",
 
