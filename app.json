@@ -56,7 +56,7 @@
     
     "BOTCAHX_API": {
 
-    "description": "اكتب 6130a8cf"
+    "description": "6130a8cf اكتب"
 
   },
 
@@ -82,7 +82,7 @@
 
    "DISABLE_PM": {
 
-    "description": "مو مهم لا تغيره",
+    "description": "لا تكتب اي شي",
 
      "required" :false
 
