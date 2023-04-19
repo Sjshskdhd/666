@@ -152,6 +152,69 @@ cmd({
         }
     )
 
+//---------------------------------------------------------------------------
+cmd({
+            pattern: "شغل",
+            desc: "Sends info about the query(of youtube video/audio).",
+            category: "downloader",
+            filename: __filename,
+            use: '<faded-Alan walker.>',
+        },
+        async(Void, citel, text) => {
+            if (!text) return citel.reply(`Use ${command} Back in Black`);
+            let yts = require("secktor-pack");
+            let search = await yts(text);
+            let anu = search.videos[0];
+            let buttons = [{
+                    buttonId: `${prefix}testvideo ${anu.url}`,
+                    buttonText: {
+                        displayText: "► فيديو",
+                    },
+                    type: 1,
+                },
+                {
+                    buttonId: `${prefix}testsong ${anu.url}`,
+                    buttonText: {
+                        displayText: "♫ صوتي",
+                    },
+                    type: 1,
+                },
+                  {
+                    buttonId: `${prefix}docsong ${anu.url}`,
+                    buttonText: {
+                        displayText: "♫ ملف",
+                    },
+                    type: 1,
+                },
+            ];
+            let buttonMessage = {
+                image: {
+                    url: anu.thumbnail,
+                },
+                caption: `
+╭───────────────◆
+│⿻ ${tlang().title} 
+│  *تشغيل يوتيوب* ✨
+│⿻ *العنوان:* ${anu.title}
+│⿻ *المده:* ${anu.timestamp}
+│⿻ *المشاهدات:* ${anu.views}
+│⿻ *رفع في:* ${anu.ago}
+│⿻ *المؤلف:* ${anu.author.name}
+╰────────────────◆
+⦿ *الرابط* : ${anu.url}
+`,
+                footer: tlang().footer,
+                buttons: buttons,
+                headerType: 4,
+            };
+            return Void.sendMessage(citel.chat, buttonMessage, {
+                quoted: citel,
+            });
+
+        }
+    )
+    //---------------------------------------------------------------------------
+
    //-------------------------------------------------------------------------
 cmd({
             pattern: "بحث",
@@ -211,6 +274,7 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
         pattern: "testsong",
+        alias: ["اغنيه","صوتي"],
         desc: "Downloads audio by yt link.",
         category: "downloader",
         react: "🎵",
@@ -227,7 +291,7 @@ cmd({
         };
 
         if (text.length === 0) {
-            reply(`❌ URL is empty! \nSend ${prefix}ytmp3 url`);
+            reply(`❌ لاستخدام الامر اكتل ${prefix}صوتي والرابط`);
             return;
         }
         try {
@@ -238,7 +302,7 @@ cmd({
             }
             let infoYt = await ytdl.getInfo(anu.url);
             //30 MIN
-            if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`*The limit has been exceeded.*❗`);
+            if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`*حجم الصوت كبير جدا.*❗`);
             let titleYt = infoYt.videoDetails.title;
             let randomName = getRandom(".mp3");
             const stream = ytdl(anu.url, {
@@ -255,7 +319,7 @@ cmd({
             let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
             if (fileSizeInMegabytes <= dlsize) {
                 let yts = require("secktor-pack");
-            citel.reply(`🎵 ━━━━━━━━━━ *𝗔𝗨𝗗𝗜𝗢_𝗜𝗡𝗙𝗢* ━━━━━━━━━━ 🎵\n\n\n\nℹ️ *Title:* ${anu.title}\n\n🕑 *Duration:* ${anu.timestamp}\n\n👀 *Viewers:* ${anu.views}\n\n⬆️ *Uploaded:* ${anu.ago}\n\n🎗️ *Author:* ${anu.author.name}\n\n🗃️ *File_Size:* ${fileSizeInMegabytes} MB`);
+            citel.reply(`🎵 ━━━━━━━━━━ *معلومات الصوت* ━━━━━━━━━━ 🎵\n\n\n\nℹ️ *العنوان:* ${anu.title}\n\n🕑 *المده:* ${anu.timestamp}\n\n👀 *المشاهدات:* ${anu.views}\n\n⬆️ *رفع في:* ${anu.ago}\n\n🎗️ *المؤلف:* ${anu.author.name}\n\n🗃️ *حجم الملف:* ${fileSizeInMegabytes} MB`);
                 let search = await yts(text);
             citel.react("✅");
                 let buttonMessage = {
@@ -263,12 +327,12 @@ cmd({
                         jpegThumbnail: log0,
                         mimetype: 'audio/mp4',
                         fileName: `${titleYt}.mp4`,
-                        caption: `● *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀᴀʙᴀᴛʜ-ᴍᴅ*`,
+                        caption: `● *حقوق: 𝐵𝑂𝑇 𝐸𝐿𝐺𝐴𝑍𝐴𝑅*`,
                         headerType: 4,
                     }
                     return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
                 } else {
-                    citel.reply(`*The limit has been exceeded.*❗`);
+                    citel.reply(`*حجم الفيديو كبير جدا.*❗`);
                 }
 
                 fs.unlinkSync(`./${randomName}`);
@@ -285,6 +349,8 @@ cmd({
 cmd({
 
         pattern: "testvideo",
+
+        alias: ["فيديو"],
 
         desc: "Downloads audio by yt link.",
 
@@ -312,7 +378,7 @@ cmd({
 
         if (text.length === 0) {
 
-            reply(`❌ URL is empty! \nSend ${prefix}ytmp3 url`);
+            reply(`❌ لاستخدام الامر اكتب ${prefix}فيديو والرابط`);
 
             return;
 
@@ -324,7 +390,7 @@ cmd({
 
             if (!urlYt.startsWith("")) {
 
-                citel.reply(`*Give Video Name!*❗`);
+                citel.reply(`*ارسل عنوان للبحث!*❗`);
 
                 return;
 
@@ -334,7 +400,7 @@ cmd({
 
             //30 MIN
 
-            if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`*The limit has been exceeded.*❗`);
+            if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`*حجم الفيديو كبير جدا.*❗`);
 
             let titleYt = infoYt.videoDetails.title;
 
@@ -366,7 +432,7 @@ cmd({
 
                 let yts = require("secktor-pack");
 
-            citel.reply(`📽️ ━━━━━━━━━━ *𝗩𝗜𝗗𝗘𝗢_𝗜𝗡𝗙𝗢* ━━━━━━━━━━ 📽️\n\n\n\nℹ️ *Title:* ${anu.title}\n\n🕑 *Duration:* ${anu.timestamp}\n\n👀 *Viewers:* ${anu.views}\n\n⬆️ *Uploaded:* ${anu.ago}\n\n🎗️ *Author:* ${anu.author.name}\n\n🗃️ *File_Size:* ${fileSizeInMegabytes} MB`);
+            citel.reply(`📽️ ━━━━━━━━━━ *معلومات الفيديو* ━━━━━━━━━━ 📽️\n\n\n\nℹ️ *العنوان:* ${anu.title}\n\n🕑 *المده:* ${anu.timestamp}\n\n👀 *المشاهدات:* ${anu.views}\n\n⬆️ *رفع في:* ${anu.ago}\n\n🎗️ *المؤلف:* ${anu.author.name}\n\n🗃️ *حجم الفيديو:* ${fileSizeInMegabytes} MB`);
 
                 let search = await yts(text);
 
@@ -382,7 +448,7 @@ cmd({
 
                         fileName: `${titleYt}.mp4`,
 
-                        caption: `● *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀᴀʙᴀᴛʜ-ᴍᴅ*`,
+                        caption: `● *حقوق: 𝐵𝑂𝑇 𝐸𝐿𝐺𝐴𝑍𝐴𝑅*`,
 
                         headerType: 4,
 
@@ -392,7 +458,7 @@ cmd({
 
                 } else {
 
-                    citel.reply(`*The limit has been exceeded.*❗`);
+                    citel.reply(`*الفيديو كبير جدا.*❗`);
 
                 }
 
@@ -414,6 +480,8 @@ cmd({
 
         pattern: "docsong",
 
+       alias: ["ملف","ملف-صوتي"],
+
         alias: ["document song"],
 
         desc: "Downloads audio by yt link.",
@@ -442,7 +510,7 @@ cmd({
 
         if (text.length === 0) {
 
-            reply(`❌ URL is empty! \nSend ${prefix}ytmp3 url`);
+            reply(`❌ لاستخدام الامر اكتب ${prefix}صوتي والرابط`);
 
             return;
 
@@ -454,7 +522,7 @@ cmd({
 
             if (!urlYt.startsWith("")) {
 
-                citel.reply(`*Give Song Name!*❗`);
+                citel.reply(`*ارسل عنوان للبحث!*❗`);
 
                 return;
 
@@ -464,7 +532,7 @@ cmd({
 
             //30 MIN
 
-            if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`*The limit has been exceeded.*❗`);
+            if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`*حجم الملف كبير جدا.*❗`);
 
             let titleYt = infoYt.videoDetails.title;
 
@@ -496,7 +564,7 @@ cmd({
 
                 let yts = require("secktor-pack");
 
-            citel.reply(`📂 ━━━━━━━━━ *𝗗𝗢𝗖𝗨𝗠𝗘𝗡𝗧_𝗜𝗡𝗙𝗢* ━━━━━━━━━ 🎵\n\n\n\nℹ️ *Title:* ${anu.title}\n\n🕑 *Duration:* ${anu.timestamp}\n\n👀 *Viewers:* ${anu.views}\n\n⬆️ *Uploaded:* ${anu.ago}\n\n🎗️ *Author:* ${anu.author.name}\n\n🗃️ *File_Size:* ${fileSizeInMegabytes} MB`);
+            citel.reply(`📂 ━━━━━━━━━ *معلومات الملف* ━━━━━━━━━ 🎵\n\n\n\nℹ️ *العنوان:* ${anu.title}\n\n🕑 *المده:* ${anu.timestamp}\n\n👀 *المشاهدات:* ${anu.views}\n\n⬆️ *رفع في:* ${anu.ago}\n\n🎗️ *المؤلف:* ${anu.author.name}\n\n🗃️ *حجم الملف:* ${fileSizeInMegabytes} MB`);
 
                 let search = await yts(text);
 
@@ -512,7 +580,7 @@ cmd({
 
                         fileName: `${titleYt}.mp3`,
 
-                        caption: `● *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀᴀʙᴀᴛʜ-ᴍᴅ*`,
+                        caption: `● *حقوق: 𝐵𝑂𝑇 𝐸𝐿𝐺𝐴𝑍𝐴𝑅*`,
 
                         headerType: 4,
 
@@ -522,7 +590,7 @@ cmd({
 
                 } else {
 
-                    citel.reply(`*The limit has been exceeded.*❗`);
+                    citel.reply(`*الملف كبير جدا.*❗`);
 
                 }
 
@@ -544,6 +612,8 @@ cmd({
 
         pattern: "docvideo",
 
+        alias: ["ملف2"],
+
         alias: ["document song"],
 
         desc: "Downloads audio by yt link.",
@@ -572,7 +642,7 @@ cmd({
 
         if (text.length === 0) {
 
-            reply(`❌ URL is empty! \nSend ${prefix}ytmp3 url`);
+            reply(`❌ لاستخدام الامر اكتب ${prefix}ملف والرابط`);
 
             return;
 
@@ -584,7 +654,7 @@ cmd({
 
             if (!urlYt.startsWith("")) {
 
-                citel.reply(`*Give Video Name!*❗`);
+                citel.reply(`*ارسل عنوان للبحث!*❗`);
 
                 return;
 
@@ -594,7 +664,7 @@ cmd({
 
             //30 MIN
 
-            if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`*The limit has been exceeded.*❗`);
+            if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`*حجم الملف كبير جدا.*❗`);
 
             let titleYt = infoYt.videoDetails.title;
 
@@ -626,7 +696,7 @@ cmd({
 
                 let yts = require("secktor-pack");
 
-            citel.reply(`📂 ━━━━━━━━━ *𝗗𝗢𝗖𝗨𝗠𝗘𝗡𝗧_𝗜𝗡𝗙𝗢* ━━━━━━━━━ 📽️\n\n\n\nℹ️ *Title:* ${anu.title}\n\n🕑 *Duration:* ${anu.timestamp}\n\n👀 *Viewers:* ${anu.views}\n\n⬆️ *Uploaded:* ${anu.ago}\n\n🎗️ *Author:* ${anu.author.name}\n\n🗃️ *File_Size:* ${fileSizeInMegabytes} MB`);
+            citel.reply(`📂 ━━━━━━━━━ *معلومات الملف* ━━━━━━━━━ 📽️\n\n\n\nℹ️ *العنوان:* ${anu.title}\n\n🕑 *المده:* ${anu.timestamp}\n\n👀 *المشاهدات:* ${anu.views}\n\n⬆️ *رفع في:* ${anu.ago}\n\n🎗️ *المؤلف:* ${anu.author.name}\n\n🗃️ *حجم الملف:* ${fileSizeInMegabytes} MB`);
 
                 let search = await yts(text);
 
@@ -642,7 +712,7 @@ cmd({
 
                         fileName: `${titleYt}.mp4`,
 
-                        caption: `● *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘʀᴀʙᴀᴛʜ-ᴍᴅ*`,
+                        caption: `● *حقوق: 𝐵𝑂𝑇 𝐸𝐿𝐺𝐴𝑍𝐴𝑅*`,
 
                         headerType: 4,
 
@@ -652,7 +722,7 @@ cmd({
 
                 } else {
 
-                    citel.reply(`*The limit has been exceeded.*❗`);
+                    citel.reply(`*الملف كبير جدا.*❗`);
 
                 }
 
